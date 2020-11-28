@@ -1,15 +1,15 @@
 public class Solution{
     
-	public int diameter(TreeNode root, int result){
+	public int maxSumPath(TreeNode root, int result){
 	    if(root==null){
 	        return -1;
 	    }
 	    
-	    int leftDiameter = diameter(root.left, result);
-	    int rightDiameter = diameter(root.right, result);
+	    int leftmaxSumPath = maxSumPath(root.left, result);
+	    int rightmaxSumPath = maxSumPath(root.right, result);
 	    
-	    int temp = Math.max(Math.max(leftDiameter, rightDiameter)+ root.val, root.val);
-	    int answer = Math.max(temp, leftDiameter+rightDiameter+root.val);
+	    int temp = Math.max(Math.max(leftmaxSumPath, rightmaxSumPath)+ root.val, root.val);
+	    int answer = Math.max(temp, leftmaxSumPath+rightmaxSumPath+root.val);
 	    
 	    result = Math.max(answer, result);
 	    return temp;
