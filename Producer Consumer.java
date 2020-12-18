@@ -69,5 +69,7 @@ public class Solution{
             }
         }
     });
+        t1.start();
+        t2.start();
     }
 }
